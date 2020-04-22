@@ -1,0 +1,2 @@
+#ifndef TIP_HPP_INCLUDED
+#define TIP_HPP_INCLUDED

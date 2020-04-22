@@ -1,0 +1,2 @@
+#ifndef BEND_HPP_INCLUDED
+#define BEND_HPP_INCLUDED
