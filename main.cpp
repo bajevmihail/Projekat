@@ -1,5 +1,7 @@
 #include <stdio.h>
+
 using namespace ctd;
+
 #include "instrumenti.hpp"
 #include "tip.hpp"
 #include "zanr.hpp"
@@ -10,7 +12,9 @@ using namespace ctd;
 #include "osvetljenje.hpp"
 #include "pesme.hpp"
 #include "dvorana.hpp"
+
 int main ()
 {
+
   return 0;
 }
