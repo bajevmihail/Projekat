@@ -5,13 +5,16 @@ class Tip
 {
 protected:
     string vrsta_instrumenta;
-    int zvuk;
+    int zvucnici;
 
 public:
-	Tip(){vrsta_instrumenta="";zvuk=0;}
+	Tip(){vrsta_instrumenta="";zvucnici=0;}
     Tip(string v, int z)
     {
         vrsta_instrumenta=v;
-        zvuk=z;
+        zvucnici=z;
+    }
+    int getzvucnici(){
+    	return zvucnici;
     }
 #endif

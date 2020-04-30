@@ -13,4 +13,9 @@ public:
         naziv_instrumenta=n;
         prezime=t;
     }
+    Tip gettipzvucnici(){
+    	return zicani.getzvucnici();
+    }
+    
+};
 #endif

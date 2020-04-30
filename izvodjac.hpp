@@ -1,20 +1,31 @@
 #ifndef IZVODJAC_HPP_INCLUDED
 #define IZVODJAC_HPP_INCLUDED
-#include "bend.hpp"
-class Izvodjac:public Bend
+#include "instrumenti.hpp"
+
+class Izvodjac:
 {
 protected:
     string ime_izvodjaca;
-    int broj_clanova;
-
+    string prezime_izvodjaca;
+    Instrument instrument;
+    int plata;
 public:
-	Izvodjac(){
-		ime_izvodjaca="";
-		broj_clanova=0;
-	}
-    Izvodjac(string i, int bc, string ib, int bcb):Bend(ib, bcb)
+    Izvodjac(){
+        ime_izvodjaca="";
+        prezime_izvodjaca="";
+        plata=0;
+    }
+    int getplata(){
+    return plata;
+}
+    Izvodjac(string i, string p, int pl)
     {
         ime_izvodjaca=i;
-        broj_clanova=bc;
+        prezime_izvodjaca=p;
+        plata=pl;
     }
+    Instrument getinstrument(){
+        return instrument.gettip();
+    }
+};
 #endif
