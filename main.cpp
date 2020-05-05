@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <iostream>
+#include <fstream>
 
 using namespace std;
 
@@ -13,8 +15,25 @@ using namespace std;
 #include "pesme.hpp"
 #include "dvorana.hpp"
 
+void citajTxt(string nazivFajla)
+{
+    string linija;
+    ifstream fajl (nazivFajla);
+    if (fajl.is_open())
+    {
+        while ( getline (fajl,linija) )
+        {
+            cout << linija << '\n';
+        }
+        fajl.close();
+    }
+
+    else
+        cout << "Neuspesno otvoren fajl";
+
+}
 int main ()
 {
-
+citajTxt("tekst.txt");
   return 0;
 }

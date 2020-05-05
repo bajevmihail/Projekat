@@ -8,12 +8,11 @@ protected:
     Tip zicani;
 public:
 	Instrument():zicani(){naziv_instrumenta="";}
-    Instrument(string n, string t, string v, int z):zicani(v, z)
+    Instrument(string n, string v, int z):zicani(v, z)
     {
         naziv_instrumenta=n;
-        prezime=t;
     }
-    Tip gettipzvucnici(){
+    int gettipzvucnici(){
     	return zicani.getzvucnici();
     }
     

@@ -1,6 +1,5 @@
 #ifndef DVORANA_HPP_INCLUDED
 #define DVORANA_HPP_INCLUDED
-
 class Dvorana
 {
 protected:
@@ -22,5 +21,5 @@ int getcena(){
 int getbroj_mesta(){
 	return broj_mesta;
 }
-}
+};
 #endif

@@ -2,7 +2,7 @@
 #define IZVODJAC_HPP_INCLUDED
 #include "instrumenti.hpp"
 
-class Izvodjac:
+class Izvodjac
 {
 protected:
     string ime_izvodjaca;
@@ -10,7 +10,7 @@ protected:
     Instrument instrument;
     int plata;
 public:
-    Izvodjac(){
+    Izvodjac():instrument(){
         ime_izvodjaca="";
         prezime_izvodjaca="";
         plata=0;
@@ -18,14 +18,14 @@ public:
     int getplata(){
     return plata;
 }
-    Izvodjac(string i, string p, int pl)
+    Izvodjac(string i, string p, int pl, string qwe, string wer, int rty):instrument(qwe, wer, rty)
     {
         ime_izvodjaca=i;
         prezime_izvodjaca=p;
         plata=pl;
     }
-    Instrument getinstrument(){
-        return instrument.gettip();
+    int getinstrument(){
+        return instrument.gettipzvucnici();
     }
 };
 #endif

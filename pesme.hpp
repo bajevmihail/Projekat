@@ -1,5 +1,6 @@
 #ifndef PESME_HPP_INCLUDED
 #define PESME_HPP_INCLUDED
+#include "izvodjac.hpp"
 class Pesma
 {
 protected:
@@ -9,13 +10,11 @@ protected:
 public:
 	Pesma():tmina(){
 		naziv_pesme="";
-		izvodjac="";
 		duzina=0;
 	}
-    Pesma(string np, int d, string i, int bc, string ib, int bcb):tmina(i, bc, ib, bcb)
+    Pesma(string np, int d, string i, string bc, int bcb,  string qwe, string wer, int rty):tmina(i, bc, bcb, qwe, wer, rty)
     {
         naziv_pesme=np;
-        izvodjac=i;
         duzina=d;
     }
 };

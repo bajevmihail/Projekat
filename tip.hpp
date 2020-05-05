@@ -17,4 +17,5 @@ public:
     int getzvucnici(){
     	return zvucnici;
     }
+};
 #endif

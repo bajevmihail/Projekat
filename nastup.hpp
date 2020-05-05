@@ -8,19 +8,18 @@ class Nastup
 protected:
 	string mesto_izvodjenja;
 	int broj_izvodjaca;
-	Izvodjaci=1;
 	int cena_karte;
 public:
-	Nastup(string mi, int bi, int ck)
+	Nastup(string mi, int ck, int bi=1)
 	{
 		mesto_izvodjenja=mi;
 		broj_izvodjaca=bi;
 		cena_karte=ck;
 	}
-	int cena(Dvorana d, Izvodjac i)
+	int cena(Dvorana &d, Izvodjac &i)
 	{
-		cena_karte=(d.getcena()+i.getplata())/d.getplata();
+		cena_karte=(d.getcena()+i.getplata())/broj_izvodjaca;
 		return cena_karte;
 	}
-}
+};
 #endif
