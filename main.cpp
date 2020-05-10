@@ -32,8 +32,15 @@ void citajTxt(string nazivFajla)
         cout << "Neuspesno otvoren fajl";
 
 }
+int Pesma::broj_pesme=0;
 int main ()
 {
 citajTxt("tekst.txt");
+Pesma p;
+cout<<p;
+Bend b;
+cout<<b;
+Dvorana d("1","2",3, 4);
+cout<<d;
   return 0;
 }

@@ -25,5 +25,12 @@ public:
    		cout<<"instrument ne zahteva zvucnik";
    }
    }
+   friend ostream& operator<<(ostream& ispis, const Bend& b)
+    {
+        ispis<<"ispis Bend:"<<endl;
+        ispis<<"ime_benda"<<b.ime_benda<<endl;
+        ispis<<"broj_clanova_benda"<<b.broj_clanova_benda<<endl;
+        return ispis;
+    }
 };
 #endif
