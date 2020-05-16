@@ -27,5 +27,9 @@ public:
     int getinstrument(){
         return instrument.gettipzvucnici();
     }
+    virtual void Plata(){
+        plata=1000;
+        cout<<plata;
+    }
 };
 #endif

@@ -15,6 +15,5 @@ public:
     int gettipzvucnici(){
     	return zicani.getzvucnici();
     }
-    
 };
 #endif

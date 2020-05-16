@@ -4,6 +4,7 @@
 
 using namespace std;
 
+#include <vector>
 #include "instrumenti.hpp"
 #include "tip.hpp"
 #include "zanr.hpp"
@@ -14,7 +15,6 @@ using namespace std;
 #include "osvetljenje.hpp"
 #include "pesme.hpp"
 #include "dvorana.hpp"
-
 void citajTxt(string nazivFajla)
 {
     string linija;
@@ -42,5 +42,13 @@ Bend b;
 cout<<b;
 Dvorana d("1","2",3, 4);
 cout<<d;
+Bend b1("Iron Maiden", 6, "a", "s", 1, "f", "t", 3);
+Bend b2("Soad", 5, "a", "s", 1, "f", "t", 3);
+Bend b3("Foo fighters", 4, "a", "s", 1, "f", "t", 3);
+Nastup n("Novi Sad", 3, 1500, "d", 2, "f", "g", 5, "t", "r", 5);
+n.dodavanje_benda(b1);
+n.dodavanje_benda(b2);
+n.dodavanje_benda(b3);
+n.ispis_spiska_bendova();
   return 0;
 }
