@@ -1,16 +1,17 @@
 #ifndef IZVODJAC_HPP_INCLUDED
 #define IZVODJAC_HPP_INCLUDED
 #include "instrumenti.hpp"
+#include<vector>
 
 class Izvodjac
 {
 protected:
     string ime_izvodjaca;
     string prezime_izvodjaca;
-    Instrument instrument;
+    /*Instrument instrument;*/
     int plata;
 public:
-    Izvodjac():instrument(){
+    Izvodjac()/*:instrument()*/{
         ime_izvodjaca="";
         prezime_izvodjaca="";
         plata=0;
@@ -18,18 +19,22 @@ public:
     int getplata(){
     return plata;
 }
-    Izvodjac(string i, string p, int pl, string qwe, string wer, int rty):instrument(qwe, wer, rty)
+    Izvodjac(string i, string p, int pl/*, string qwe, string wer, int rty*/)/*:instrument(qwe, wer, rty)*/
     {
         ime_izvodjaca=i;
         prezime_izvodjaca=p;
         plata=pl;
     }
-    int getinstrument(){
+    /*int getinstrument(){
         return instrument.gettipzvucnici();
-    }
+        }*/
     virtual void Plata(){
         plata=1000;
         cout<<plata;
+    }
+    void dodavanje_izvodjaca(Izvodjac &i)
+    {
+        ime_izvodjaca.push_back(i);
     }
 };
 #endif

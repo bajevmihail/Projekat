@@ -1,20 +1,26 @@
 #ifndef DVORANA_HPP_INCLUDED
 #define DVORANA_HPP_INCLUDED
+#include <vector>
 class Dvorana
 {
 protected:
-	string ozvucenje;
-	string osvetljenje;
+	//string ozvucenje;
+	//string osvetljenje;
+	string naziv_dvorane;
 	int broj_mesta;
 	int cena;
 public:
-	Dvorana(string oz, string os, int bm, int c) 
+	Dvorana(/*string oz, string os,*/ string nd, int bm, int c) 
 	{
-		ozvucenje=oz;
-		osvetljenje=os;
+		/*ozvucenje=oz;
+		osvetljenje=os;*/
+		naziv_dvorane=nd;
 		broj_mesta=bm;
 		cena=c;
 	}
+string getnaziv_dvorane(){
+	return naziv_dvorane;
+}
 int getcena(){
 	return cena;
 }
@@ -24,8 +30,9 @@ int getbroj_mesta(){
 friend ostream& operator<<(ostream& ispis, const Dvorana& d)
     {
         ispis<<"ispis Dvorana:"<<endl;
-        ispis<<"ozvucenje"<<d.ozvucenje<<endl;
-        ispis<<"osvetljenje"<<d.osvetljenje<<endl;
+        ispis<<"naziv_dvorane"<<d.naziv_dvorane;
+        //ispis<<"ozvucenje"<<d.ozvucenje<<endl;
+        //ispis<<"osvetljenje"<<d.osvetljenje<<endl;
         ispis<<"broj_mesta: "<<d.broj_mesta<<endl;
         ispis<<"cena: "<<d.cena<<endl;
         return ispis;

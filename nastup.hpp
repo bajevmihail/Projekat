@@ -6,20 +6,21 @@
 #include <vector>
 #include <fstream>
 
-class Nastup:public Bend
+class Nastup:
 {
 protected:
-	Bend b;
 	string mesto_izvodjenja;
-	int broj_izvodjaca;
+	int broj_bendova;
 	int cena_karte;
 	vector<Bend*>spisak_bendova;
 public:
-	Nastup(string mi, int ck, int bi, string ib, int bcb, string i, string p, int pl, string qwe, string wer, int rty):b(ib, bcb, i, p, pl, qwe, wer, rty){
+	Nastup(string mi, int ck, int bb, string ib, int bcb, string i, string p, int pl/*, string qwe, string wer, int rty*/):b(ib, bcb, i, p, pl/*, qwe, wer, rty*/){
 		mesto_izvodjenja=mi;
-		broj_izvodjaca=bi;
 		cena_karte=ck;
+		broj_bendova=bb;
 	}
+	    string getnaziv_benda(){
+	    	return naziv_benda;
 	int cena(Dvorana &d, Izvodjac &i)
 	{
 		cena_karte=(d.getcena()+i.getplata())/broj_izvodjaca;
