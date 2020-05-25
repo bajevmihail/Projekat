@@ -91,7 +91,7 @@ int main()
     spisak_dvorana.push_back(d2);
     spisak_dvorana.push_back(d3);
     Bend b1("Iron_maiden",6),b2("Brkovi",4),b3("Michael_Jackson",1);
-    
+
 
     Izvodjac i2("A","B",1000),i3("C","D",2000),i4("H","I",1500),i5("J","K",1700),i6("L","M",2200),i7("N","O",2700),i8("P","Q",1500),i9("R","S",1900),i10("T","U",2600),i11("V","W",1300),i12("X","Y",2100);
     b1.dodajIzvodjaca(&i2);
@@ -111,9 +111,9 @@ int main()
     spisak_bendova.push_back(b1);
     spisak_bendova.push_back(b2);
     spisak_bendova.push_back(b3);
-    
 
 
+    vector<Bend>bendovi;
     do
     {
         cout<<"Ako zelite da dodate nov bend unesite 1"<<endl;
@@ -121,45 +121,48 @@ int main()
         cout<<"Ako zelite da vidite spisak postojecih bendova unesite 3"<<endl;
         cout<<"Ako zelite da vidite spisak postojecih dvorana unesite 4"<<endl;
         cout<<"Ako zelite da kreirate nastup unesite 5"<<endl;
+        cout<<"Ako zelite da izadjete iz programa unesite 0"<<endl;
         cin>>broj;
+        if(broj==0)
+            break;
         if(broj==1)
         {
-            cout<<"Unesite ime benda";
+            cout<<"Unesite ime benda: ";
             cin>>ime_benda;
-            cout<<"Unesite broj clanova benda";
+            cout<<"Unesite broj clanova benda: ";
             cin>>broj_clanova_benda;
             Bend novi_bend(ime_benda,broj_clanova_benda);
                for(int i=0; i<broj_clanova_benda; i++)
             {
-                cout<<"Unesite ime "<<i+1<<". izvodjaca";
+                cout<<"Unesite ime "<<i+1<<". izvodjaca: ";
                 cin>>ime_izvodjaca;
-                cout<<"Unesite prezime "<<i+1<<". izvodjaca";
+                cout<<"Unesite prezime "<<i+1<<". izvodjaca: ";
                 cin>>prezime_izvodjaca;
-                cout<<"Unesite platu koju prima "<<i+1<<". izvodjac";
+                cout<<"Unesite platu koju prima "<<i+1<<". izvodjac: ";
                 cin>>plata;
                 Izvodjac i1(ime_izvodjaca, prezime_izvodjaca, plata);
                 novi_bend.dodajIzvodjaca(&i1);
             }
             novi_bend.izracunaj_ukupnu_platu();
             spisak_bendova.push_back(novi_bend);
-           
+
         }
             if(broj==2)
             {
-                cout<<"Unesite naziv dvorane";
+                cout<<"Unesite naziv dvorane: ";
                 cin>>naziv_dvorane;
-                cout<<"Unesite broj mesta u dvorani";
+                cout<<"Unesite broj mesta u dvorani: ";
                 cin>>broj_mesta;
-                cout<<"Unesite cenu dvorane";
+                cout<<"Unesite cenu dvorane: ";
                 cin>>cena;
                 Dvorana nova_dvorana(naziv_dvorane,broj_mesta,cena);
                 spisak_dvorana.push_back(nova_dvorana);
             }
-            
+
             if (broj==3)
             {
                 ispis_spiska_bendova();
-                
+
             }
             if (broj==4)
             {
@@ -167,7 +170,7 @@ int main()
             }
             if (broj==5)
             {
-                cout<<"Izaberite dvoranu"<<endl;
+                cout<<"Izaberite dvoranu i unesite njen naziv: "<<endl;
                 ispis_spiska_dvorana();
                 cin>>q;
                 for(auto i=spisak_dvorana.begin(); i!=spisak_dvorana.end(); i++)
@@ -177,26 +180,30 @@ int main()
                         odabrana_dvorana=(*i);
                     }
                 }
-                cout<<"Unesite broj bendova koji ce nastupati"<<endl;
+                cout<<"Unesite broj bendova koji ce nastupati: "<<endl;
                 cin>>broj_bendova;
-                cout<<"Izaberite bend/bendove sa spiska"<<endl;
+                cout<<"Izaberite bend/bendove sa spiska: "<<endl;
                 ispis_spiska_bendova();
-                vector<Bend>bendovi;
                 for(int i=0; i<broj_bendova; i++)
                 {
                     string ime;
                     cin>>ime;
-                    if(ime==spisak_bendova.at(i).getime_benda())
+                    for(auto i=spisak_bendova.begin(); i!=spisak_bendova.end(); i++)
                     {
-                        bendovi.push_back(spisak_bendova.at(i));
+                        if(ime==(*i).getime_benda())
+                        {
+                            bendovi.push_back(*i);
+                        }
+                        
                     }
+                   
                 }
                 plata_svih_bendova=0;
                 for(int i=0; i<bendovi.size(); i++)
                 {
                     plata_svih_bendova+=bendovi.at(i).getukupna_plata();
                 }
-                cout<<"Unesite pozeljnu zaradu"<<endl;
+                cout<<"Unesite pozeljnu zaradu: "<<endl;
                 cin>>zarada;
                 cena_karte=(plata_svih_bendova+zarada+odabrana_dvorana.getcena())/odabrana_dvorana.getbroj_mesta();
                 Nastup n1(odabrana_dvorana, (int)broj_bendova, cena_karte);
@@ -205,6 +212,8 @@ int main()
                 {
                     n1.dodavanje_benda(bendovi.at(i));
                 }
+                spisak_bendova.clear();
+                spisak_bendova=bendovi;
             }
         }
     while(broj!=0);
@@ -214,11 +223,11 @@ int main()
     ispisfajl<<"Nastupace bendovi"<<endl;
     for(auto i=spisak_bendova.begin(); i!=spisak_bendova.end(); i++)
     {
-        ispisfajl<<(*i).getime_benda()<<endl;
+        ispisfajl<<i->getime_benda()<<endl;
     }
     ispisfajl.close();
     citajTxt("ispisfajl.txt");
-   
+
   /*  ispisfajl<<cena_karte;
     ispisfajl.close();
     citajTxt("tekst.txt");

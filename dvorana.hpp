@@ -37,12 +37,12 @@ int getbroj_mesta(){
 }
 friend ostream& operator<<(ostream& ispis, const Dvorana& d)
     {
-        ispis<<"ispis Dvorana: "<<endl;
-        ispis<<"naziv_dvorane "<<d.naziv_dvorane<<endl;
+        ispis<<endl;
+        ispis<<"naziv_dvorane: "<<d.naziv_dvorane<<endl;
         //ispis<<"ozvucenje"<<d.ozvucenje<<endl;
         //ispis<<"osvetljenje"<<d.osvetljenje<<endl;
         ispis<<"broj_mesta: "<<d.broj_mesta<<endl;
-        ispis<<"cena: "<<d.cena<<endl;
+        ispis<<"cena: "<<d.cena;
         return ispis;
     }
 };

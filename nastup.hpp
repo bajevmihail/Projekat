@@ -33,8 +33,6 @@ public:
     void dodavanje_benda(Bend &b)
     {
         spisak_bendova.push_back(&b);
-        cout<<"Bend koji je stavljen na spisak je:\n";
-        cout<<b;
     }
     void brisanje_benda()
     {
