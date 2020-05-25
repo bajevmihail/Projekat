@@ -32,9 +32,6 @@ public:
         plata=1000;
         cout<<plata;
     }
-    void dodavanje_izvodjaca(Izvodjac &i)
-    {
-        ime_izvodjaca.push_back(i);
-    }
+  
 };
 #endif

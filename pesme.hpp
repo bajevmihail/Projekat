@@ -4,17 +4,17 @@
 class Pesma
 {
 protected:
-	static int broj_pesme;
-	string naziv_pesme;
-	int duzina;
-	Izvodjac tmina;
+    static int broj_pesme;
+    string naziv_pesme;
+    int duzina;
+    Izvodjac tmina;
 public:
-	Pesma():tmina(){
-		naziv_pesme="";
-		duzina=0;
-		broj_pesme++;
-	}
-    Pesma(string np, int d, string i, string bc, int bcb,  string qwe, string wer, int rty):tmina(i, bc, bcb, qwe, wer, rty)
+    Pesma():tmina(){
+        naziv_pesme="";
+        duzina=0;
+        broj_pesme++;
+    }
+    Pesma(string np, int d, string i, string bc, int bcb,  string qwe, string wer, int rty):tmina(i, bc, bcb/*, qwe, wer, rty*/)
     {
         naziv_pesme=np;
         duzina=d;

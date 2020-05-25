@@ -7,13 +7,13 @@ protected:
     string naziv_instrumenta;
     Tip zicani;
 public:
-	Instrument():zicani(){naziv_instrumenta="";}
+    Instrument():zicani(){naziv_instrumenta="";}
     Instrument(string n, string v, int z):zicani(v, z)
     {
         naziv_instrumenta=n;
     }
     int gettipzvucnici(){
-    	return zicani.getzvucnici();
+        return zicani.getzvucnici();
     }
 };
 #endif

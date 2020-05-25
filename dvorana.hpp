@@ -18,6 +18,14 @@ public:
 		broj_mesta=bm;
 		cena=c;
 	}
+    Dvorana()
+    {
+        /*ozvucenje=oz;
+        osvetljenje=os;*/
+        naziv_dvorane=" ";
+        broj_mesta=0;
+        cena=0;
+    }
 string getnaziv_dvorane(){
 	return naziv_dvorane;
 }
@@ -29,8 +37,8 @@ int getbroj_mesta(){
 }
 friend ostream& operator<<(ostream& ispis, const Dvorana& d)
     {
-        ispis<<"ispis Dvorana:"<<endl;
-        ispis<<"naziv_dvorane"<<d.naziv_dvorane;
+        ispis<<"ispis Dvorana: "<<endl;
+        ispis<<"naziv_dvorane "<<d.naziv_dvorane<<endl;
         //ispis<<"ozvucenje"<<d.ozvucenje<<endl;
         //ispis<<"osvetljenje"<<d.osvetljenje<<endl;
         ispis<<"broj_mesta: "<<d.broj_mesta<<endl;

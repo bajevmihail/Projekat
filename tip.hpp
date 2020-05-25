@@ -8,14 +8,14 @@ protected:
     int zvucnici;
 
 public:
-	Tip(){vrsta_instrumenta="";zvucnici=0;}
+    Tip(){vrsta_instrumenta="";zvucnici=0;}
     Tip(string v, int z)
     {
         vrsta_instrumenta=v;
         zvucnici=z;
     }
     int getzvucnici(){
-    	return zvucnici;
+        return zvucnici;
     }
 };
 #endif
